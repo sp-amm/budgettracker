@@ -18,7 +18,9 @@ app.use(express.static("public"));
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/budget", 
 {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  //added because of deprecation warning when running server.
+  useUnifiedTopology: true
 });
 
 // routes
